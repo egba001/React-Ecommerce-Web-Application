@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
@@ -20,6 +22,8 @@ module.exports = {
       colors: {
         primary: '#222222',
         secondary: '#F5E6E0',
+        ash: '#FFEFFE',
+        white: colors.white
       },
       backgroundImage: {
         hero: "url('./image/hero_bg.jpg')",

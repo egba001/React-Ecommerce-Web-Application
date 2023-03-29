@@ -22,7 +22,7 @@ module.exports = {
       colors: {
         primary: '#222222',
         secondary: '#F5E6E0',
-        ash: '#FFEFFE',
+        ash: colors.red,
         white: colors.white
       },
       backgroundImage: {

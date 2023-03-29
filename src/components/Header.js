@@ -1,13 +1,17 @@
-import logo from './../images/logo.png';
+// import logo from './../images/logo.png';
+import { useContext } from "react";
+import { SidebarContext } from "../contexts/SidebarContext";
+import { BsBag } from "react-icons/bs";
 
 const Header = () => {
+    const {isOpen, setIsOpen} = useContext(SidebarContext);
     return (
-        <div className='bg-secondary px-9 py-6'>
-            <div className='flex items-center'>
-                <img src={logo} alt='logo' />
-                <h1 className='font-bold text-primary text-2xl ml-2'>E-Fashion</h1>
-            </div>
-        </div>
+        <header className=" bg-red-300 p-2">
+           <h1>Header</h1>
+           <div onClick={() => setIsOpen(!isOpen)} className="cursor-pointer flex relative">
+                <BsBag className="text-2xl" />
+           </div>
+        </header>
     );
 }
 

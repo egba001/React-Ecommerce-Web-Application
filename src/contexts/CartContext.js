@@ -16,19 +16,19 @@ const CartProvider = ({ children }) => {
         if (cartItem) {
             const newCart  = [...cart].map(item => {
                 if (item.id === id) {
-                    return {...item, amount: newItem.amount + 1 };
+                    return {...item, amount: cartItem.amount + 1 };
                 } else {
                     return item;
                 }
             });
-            setCart([newCart]);
+            setCart(newCart);
         } else {
             setCart([...cart, newItem]);
         }
  };
     console.log(cart);
     return (
-        <CartContext.Provider value={{ addToCart }}>
+        <CartContext.Provider value={{ cart, addToCart }}>
             {children}
         </CartContext.Provider>
     );

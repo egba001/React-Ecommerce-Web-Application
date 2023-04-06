@@ -1,7 +1,12 @@
 import { NavLink } from "react-router-dom";
-import { IoMdAdd, IoMdClose, IoMdRemove } from 'react-icons/io'
+import { IoMdAdd, IoMdClose, IoMdRemove } from 'react-icons/io';
+import { CartContext } from "../contexts/CartContext";
+import { useContext } from "react";
 
 const CartItem = ({ item }) => {
+
+    const { removeFromCart } = useContext(CartContext);
+
     const {image, id, title, amount, price} = item;
     return (
         <div className="flex gap-x-4 border-b lg:px-6 w-full font-light text-gray-400 border-gray-200">
@@ -16,7 +21,7 @@ const CartItem = ({ item }) => {
                     </div>
                     <div className="flex h-[36px] gap-x-2 rounded-sm items-center">
                         <div className="flex flex-1 h-full max-w-[100px] border rounded-sm border-primary font-medium text-sm  items-center justify-between">
-                            <div className="flex-1 h-full flex justify-center items-center">
+                            <div onClick={(id) => removeFromCart(id)} className="flex-1 h-full flex justify-center items-center">
                                 <IoMdRemove />
                             </div>
                             <p className="h-full justify-center items-center px-2 flex">{amount}</p>

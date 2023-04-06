@@ -15,13 +15,14 @@ const Sidebar = () => {
         <div className={`${isOpen ? 'right-0' : '-right-full'} w-full bg-white fixed top-0 h-full shadow-2xl md:w-[35vw] xl:max-w-[30vw] transition-all duration-300 z-20 px-4 lg:px-[35px]`}>
             <div className="flex items-center justify-between py-6 border-b">
                 <h2 className="text-sm font-semibold uppercase">Shopping Bag(0)</h2>
-                <div onClick={handleClose} className="flex items-center cursor-pointer justify-center w-8 h-8 flex">
-                    <FiArrowRight className='text-2xl' />
+                <div onClick={handleClose} className="flex items-center cursor-pointer justify-center w-8 h-8">
+                    <FiArrowRight className='text-2xl'/>
                 </div>
             </div>
-            <div>{cart.map(item => {
+            <div  className="overflow-y-scroll h-full">{cart.map(item => {
                 return <CartItem item={item} />
-            })}</div>
+            })}
+            </div>
         </div>
     );
 }

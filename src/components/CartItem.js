@@ -22,8 +22,8 @@ const CartItem = ({ item }) => {
                         </button>
                     </div>
                     <div className="flex h-[36px] gap-x-2 rounded-sm items-center">
-                        <div className="flex flex-1 h-full max-w-[100px] border rounded-sm border-primary font-medium text-sm  items-center justify-between">
-                            <div onClick={() => decreaseAmount(id)} className="bg-redflex-1 h-full flex justify-center items-center">
+                        <div className="flex flex-1 h-full max-w-[100px] rounded-sm border-primary font-medium text-sm  items-center justify-between">
+                            <div onClick={() => decreaseAmount(id)} className="bg-red flex-1 h-full flex justify-center items-center">
                                 <IoMdRemove />
                             </div>
                             <p className="h-full justify-center items-center px-2 flex">{amount}</p>

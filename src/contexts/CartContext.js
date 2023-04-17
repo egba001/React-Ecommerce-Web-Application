@@ -69,7 +69,9 @@ const CartProvider = ({ children }) => {
     }
 
     const decreaseAmouunt = (id) => {
-        const cartItem = cart.find(item => item.id === id);
+        const cartItem = cart.find(item => {
+            return item.id === id
+        });
         if (cartItem) {
             const newCart  = cart.map(item => {
                 if (item.id === id){

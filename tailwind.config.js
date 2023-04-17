@@ -26,7 +26,7 @@ module.exports = {
         white: colors.white
       },
       backgroundImage: {
-        hero: "url('./image/hero_bg.jpg')",
+        hero: "url('./images/hero.jpg')",
       },
     },
   },

@@ -6,10 +6,11 @@ import { FiArrowRight } from "react-icons/fi"
 import React from "react";
 import { CartContext } from "../contexts/CartContext";
 import CartItem from './CartItem';
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
     const { isOpen, handleClose } = useContext(SidebarContext);
-    const { cart, clearCart } = useContext(CartContext);
+    const { cart, clearCart, total } = useContext(CartContext);
 
     return (
         <div className={`${isOpen ? 'right-0' : '-right-full'} w-full bg-white fixed top-0 h-full shadow-2xl md:w-[35vw] xl:max-w-[30vw] transition-all duration-300 z-20 px-4 lg:px-[35px]`}>
@@ -19,17 +20,20 @@ const Sidebar = () => {
                     <FiArrowRight className='text-2xl'/>
                 </div>
             </div>
-            <div  className="h-full">{cart.map(item => {
+            <div  className="h-[520px] flex flex-col gap-y-2 lg:h-[640px] overflow-y-auto overflow-x-hidden border-b">
+                {cart.map(item => {
                 return <CartItem item={item} />
             })}
             <div className="flex justify-between mt-2 p-3 rounded-md bg-slate-200 items-center">
                 <div>
-                    <p><span>Total : $</span> 1000</p>
+                    <p><span>Total</span>$ {parseFloat(total).toFixed(2)}</p>
                 </div>
                 <button onClick={clearCart} className='bg-red-300 rounded-md p-3'>
                     <FiTrash2 />
                 </button>
             </div>
+            <NavLink to='/' className='bg-gray-200 justify-center flex items-center text-primary w-full font-medium'>View Cart</NavLink>
+            <NavLink to='/' className='bg-primary justify-center flex items-center text-white w-full font-medium'>Checkout</NavLink>
             </div>
         </div>
     );

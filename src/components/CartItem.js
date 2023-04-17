@@ -17,11 +17,13 @@ const CartItem = ({ item }) => {
                 <div className="flex justify-between w-full flex-col">
                     <div className="flex justify-between mb-2">
                         <NavLink to={`/product/${id}`} className='text-sm hover:underline uppercase font-medium'>{title}</NavLink>
-                        <button className="text-xl cursor-pointer"><IoMdClose /></button>
+                        <button className="text-xl cursor-pointer"  onClick={() => removeFromCart(id)}>
+                            <IoMdClose />
+                        </button>
                     </div>
                     <div className="flex h-[36px] gap-x-2 rounded-sm items-center">
                         <div className="flex flex-1 h-full max-w-[100px] border rounded-sm border-primary font-medium text-sm  items-center justify-between">
-                            <div onClick={(id) => removeFromCart(id)} className="flex-1 h-full flex justify-center items-center">
+                            <div className="flex-1 h-full flex justify-center items-center">
                                 <IoMdRemove />
                             </div>
                             <p className="h-full justify-center items-center px-2 flex">{amount}</p>

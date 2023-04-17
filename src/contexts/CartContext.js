@@ -34,9 +34,20 @@ const CartProvider = ({ children }) => {
         });
         setCart(newCart);
     }
+
+    // Funtion to clear cart
+    const clearCart = () => {
+        setCart([]);
+    }
+
+    // const increaseAmount = () => {
+    //     const 
+        
+    // }
+
     console.log(cart);
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart }}>
             {children}
         </CartContext.Provider>
     );
